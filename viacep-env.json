@@ -1,0 +1,21 @@
+{
+	"id": "41e7f61a-bb29-4892-a37a-78ba69b2c528",
+	"name": "viacep",
+	"values": [
+		{
+			"key": "url",
+			"value": "https://viacep.com.br/ws/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "cepAleatorio",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-09-26T22:43:22.618Z",
+	"_postman_exported_using": "Postman/11.14.0"
+}

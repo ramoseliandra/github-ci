@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "c6e51a97-4e1a-4d52-90bf-651552e7e1bc",
+		"name": "viacep_consulta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20666139",
+		"_collection_link": "https://crimson-capsule-813190.postman.co/workspace/viacep~394d5136-7c5f-4290-a5ef-b4cf4b9d7a73/collection/20666139-c6e51a97-4e1a-4d52-90bf-651552e7e1bc?action=share&source=collection_link&creator=20666139"
+	},
+	"item": [
+		{
+			"name": "viacep-consulta",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function gerarCepAleatorio() {\r",
+							"    let cepAleatorio = _.random(06246-140,06246-142,06246-145,13244-132); // Parte inicial do CEP (5 dígitos)\r",
+							"    //let num2 = _.random(100, 999);     // Parte final do CEP (3 dígitos)\r",
+							"    return random\r",
+							"}\r",
+							"\r",
+							"\r",
+							"let cepAleatorio = gerarCepAleatorio();\r",
+							"pm.environment.set(\"cepAleatorio\", cepAleatorio);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{cepAleatorio}}/json/",
+					"host": [
+						"{{url}}{{cepAleatorio}}"
+					],
+					"path": [
+						"json",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
